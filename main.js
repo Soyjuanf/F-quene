@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".scroll-clip", {
+  gsap.to(".text-reveal", {
     scrollTrigger: {
-      trigger: ".scroll-reveal-paragraph",
+      trigger: ".scroll-fill-section",
       start: "top 80%",
-      end: "top 30%",
+      end: "top 20%",
       scrub: true
     },
-    clipPath: "inset(0 0% 0 0)",
+    backgroundPosition: "100% 0",
     ease: "none"
   });
 });
+
