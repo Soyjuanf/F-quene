@@ -262,21 +262,13 @@ body {
   color: white;
   animation: marquee 40s linear infinite;
   z-index: 1;
-  opacity: 0; /* lo cambia el JS a 1 */
+  opacity: 0;
   pointer-events: none;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateY(-50%) translateX(0);
-  }
-  100% {
-    transform: translateY(-50%) translateX(-50%);
-  }
-}
-
 .capsule-zoom-container {
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 100vh;
   z-index: 2;
@@ -289,6 +281,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  transform: scale(1); /* base */
   transition: transform 0.5s ease;
 }
 
