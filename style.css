@@ -90,7 +90,6 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-
 .svg-text-scroll {
   background-color: #0a0a0a;
   padding: 10rem 2rem;
@@ -101,4 +100,21 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.text-layer {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  line-height: 1.3;
+  font-weight: 300;
+  padding: 1rem;
+  max-width: 1000px;
+}
+
+.text-gray {
+  color: #444;
+}
+
+.text-white {
+  color: #fff;
 }
