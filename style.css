@@ -140,7 +140,7 @@ body {
 
 .capsule-img {
   width: 250px;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
   border-radius: 50px / 70px;
 }
