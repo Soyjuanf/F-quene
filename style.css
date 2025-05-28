@@ -91,41 +91,25 @@ body {
   cursor: pointer;
 }
 
-.scroll-reveal-paragraph {
-  background: #0a0a0a;
+.scroll-fill-section {
+  background-color: #0a0a0a;
   padding: 10rem 2rem;
-  position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
-.paragraph-wrapper {
-  position: relative;
+.fill-text-container {
   max-width: 1000px;
-  font-size: 3.5rem;
-  line-height: 1.4;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  text-align: left;
+  font-size: 3.5rem;
+  line-height: 1.4;
+  position: relative;
 }
 
-.paragraph-base,
-.paragraph-fill {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.paragraph-base {
-  color: #444;
-  z-index: 1;
-}
-
-.paragraph-fill {
-  color: white;
-  z-index: 2;
-  clip-path: inset(0 100% 0 0); /* oculto horizontalmente */
+.text-reveal {
+  background: linear-gradient(to right, white 0%, white 0%, #444 0%, #444 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
