@@ -20,18 +20,26 @@
   </section>
 
 <section class="svg-text-scroll">
-  <svg viewBox="0 0 1600 300" class="svg-scroll-text" preserveAspectRatio="xMinYMin meet">
+  <svg viewBox="0 0 1200 300" class="svg-scroll-text" preserveAspectRatio="xMinYMin meet">
     <defs>
       <mask id="reveal-mask">
-        <rect x="0" y="0" width="0" height="100%" fill="white" id="mask-rect"/>
+        <rect x="0" y="0" width="0" height="100%" fill="white" id="mask-rect" />
       </mask>
     </defs>
-    <text x="0" y="150" font-size="80" font-family="Inter, sans-serif" fill="#444">
-      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses.
-    </text>
-    <text x="0" y="150" font-size="80" font-family="Inter, sans-serif" fill="white" mask="url(#reveal-mask)">
-      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses.
-    </text>
+
+    <!-- fondo gris -->
+    <foreignObject x="0" y="0" width="100%" height="100%">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="text-layer text-gray">
+        Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
+      </div>
+    </foreignObject>
+
+    <!-- texto blanco con máscara -->
+    <foreignObject x="0" y="0" width="100%" height="100%" mask="url(#reveal-mask)">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="text-layer text-white">
+        Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
+      </div>
+    </foreignObject>
   </svg>
 </section>
 
