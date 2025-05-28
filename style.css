@@ -223,10 +223,15 @@ body {
   background: transparent;
   white-space: nowrap;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.tag.selected {
-  border: 2px solid white;
+.tag:hover {
+  transform: scale(1.05);
   color: white;
+  border-color: white;
 }
 
+.tag.selected:hover {
+  transform: scale(1.03);
+}
