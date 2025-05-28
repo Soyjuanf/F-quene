@@ -247,64 +247,59 @@ body {
 .capsule-transition-section {
   height: 200vh;
   position: relative;
-  background-color: #2d2621;
+  background-color: #000;
+  overflow: hidden;
 }
 
 .capsule-background-text {
   position: fixed;
   top: 50%;
   left: 0;
-  font-size: 18rem;
-  font-weight: 700;
-  white-space: nowrap;
-  color: #f0ede7;
-  animation: marquee 40s linear infinite;
   transform: translateY(-50%);
+  font-size: 18rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: white; /* ✅ BLANCO PURO */
+  animation: marquee 40s linear infinite;
   z-index: 1;
-  opacity: 0; /* inicial invisible */
+  opacity: 0;
   pointer-events: none;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%) translateY(-50%); }
-  100% { transform: translateX(-50%) translateY(-50%); }
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
+  }
 }
 
 .capsule-zoom-container {
   position: sticky;
   top: 0;
+  width: 100%;
   height: 100vh;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
 }
 
 .capsule-image {
-  width: 60%;
-  border-radius: 100px;
-  transition: border-radius 0.5s ease;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .capsule-overlay {
   position: absolute;
-  text-align: left;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  max-width: 500px;
-  opacity: 0; /* se controla vía JS */
+  max-width: 600px;
+  color: white;
   z-index: 3;
-  color: white; /* forzamos blanco total */
+  opacity: 0;
 }
-
-.capsule-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.capsule-desc {
-  font-size: 1rem;
-  max-width: 400px;
-}
-
