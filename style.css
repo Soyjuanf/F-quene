@@ -92,39 +92,43 @@ body {
 }
 
 .scroll-fill-section {
-  background: #0a0a0a;
+  background-color: #0a0a0a;
   padding: 10rem 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.fill-text-wrapper {
-  max-width: 1000px;
+.fill-text-container {
   position: relative;
+  max-width: 1000px;
   font-size: 3.5rem;
   font-weight: 300;
-  font-family: 'Inter', sans-serif;
   line-height: 1.4;
-  color: #444;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
 }
 
-.text-layer {
-  position: relative;
-  margin: 0;
-  z-index: 1;
-}
-
-.text-layer::after {
-  content: attr(data-text);
+.text-base,
+.text-fill {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0%;
-  overflow: hidden;
   white-space: pre-wrap;
+  width: 100%;
+  margin: 0;
+}
+
+.text-base {
+  color: #444;
+  z-index: 1;
+}
+
+.text-fill {
   color: white;
   z-index: 2;
-  pointer-events: none;
+  clip-path: inset(0 100% 0 0); /* Oculto desde la derecha */
 }
 
 .capsule-text-section {
