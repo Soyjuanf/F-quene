@@ -92,28 +92,43 @@ body {
 }
 
 .scroll-fill-section {
+  background-color: #0a0a0a;
   padding: 10rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #0a0a0a;
-}
-
-.fill-text-container {
-  max-width: 1000px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 3.5rem;
-  line-height: 1.4;
   position: relative;
 }
 
-.text-reveal {
-  background-image: linear-gradient(to right, white 50%, #444 50%);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.fill-text-container {
+  position: relative;
+  max-width: 1000px;
+  font-size: 3.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.text-base,
+.text-fill {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: normal;
+  width: 100%;
+}
+
+.text-base {
+  color: #444;
+  z-index: 1;
+}
+
+.text-fill {
+  color: white;
+  z-index: 2;
+  clip-path: inset(0 100% 0 0); /* Comienza oculto desde la derecha */
+  transition: clip-path 0.3s ease;
 }
