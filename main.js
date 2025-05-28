@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Texto de fondo (FÚQUENE): aparece fijo al inicio de la sección
+// Texto de fondo (FÚQUENE) aparece durante la sección
   gsap.fromTo(".capsule-background-text",
     { opacity: 0 },
     {
@@ -28,22 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  // Imagen hace zoom desde escala 1 → 1.5
+  // Zoom y transformación visual de la imagen
   gsap.fromTo(".capsule-image",
-    { scale: 1 }, // arranca más pequeña
     {
-      scale: 1.5,
+      scale: 0.6,
+      borderRadius: "100px"
+    },
+    {
+      scale: 1,
+      borderRadius: "0px",
       scrollTrigger: {
         trigger: ".capsule-transition-section",
         start: "top top",
         end: "bottom top",
         scrub: true
       },
-      ease: "none"
+      ease: "power2.out"
     }
   );
 
-  // Texto aparece cuando zoom está casi completo
+  // Texto "Nuestro Objetivo" aparece al final del scroll
   gsap.fromTo(".capsule-overlay",
     { opacity: 0, y: 40 },
     {
@@ -51,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       y: 0,
       scrollTrigger: {
         trigger: ".capsule-transition-section",
-        start: "70% center", // espera al final del zoom
+        start: "70% center",
         end: "bottom top",
         scrub: true
       },
