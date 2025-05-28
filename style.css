@@ -246,8 +246,8 @@ body {
 
 .capsule-transition-section {
   height: 200vh;
-  background-color: black;
   position: relative;
+  background-color: #1f1a17;
   overflow: hidden;
 }
 
@@ -266,10 +266,18 @@ body {
   pointer-events: none;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
 .capsule-zoom-container {
   position: sticky;
   top: 0;
-  width: 60%;
   height: 100vh;
   z-index: 2;
   display: flex;
@@ -278,11 +286,10 @@ body {
 }
 
 .capsule-image {
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  height: auto;
   object-fit: cover;
-  transform: scale(1); /* base */
-  transition: transform 0.5s ease;
+  transition: border-radius 0.3s ease;
 }
 
 .capsule-overlay {
