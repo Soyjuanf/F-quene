@@ -126,3 +126,40 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
+.capsule-text-section {
+  background-color: #0a0a0a;
+  padding: 10rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.capsule-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.capsule-images {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.capsule-img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 100px / 80px;
+}
+
+.capsule-text {
+  max-width: 500px;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #cfc6bb;
+}
