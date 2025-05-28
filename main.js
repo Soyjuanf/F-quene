@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Texto que se rellena horizontalmente (otra sección)
+  // Texto que se rellena (otra sección)
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
       trigger: ".scroll-fill-section",
@@ -13,43 +13,36 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // 2. Texto de fondo infinito FÚQUENE – blanco, solo visible en su sección
-  gsap.to(".capsule-background-text", {
-    scrollTrigger: {
-      trigger: ".capsule-transition-section",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    },
-    opacity: 1, // blanco total
-    ease: "none"
-  });
-
-  // 3. Zoom completo de la imagen en toda la sección
-  gsap.to(".capsule-image", {
+  // SECCIÓN CAPSULE - usar timeline para más control
+  const capsuleTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".capsule-transition-section",
       start: "top top",
       end: "bottom top",
-      scrub: true
-    },
-    scale: 1.5,
+      scrub: true,
+      pin: ".capsule-zoom-container",
+      anticipatePin: 1
+    }
+  });
+
+  // 1. Texto de fondo: opacidad 1 siempre
+  capsuleTimeline.to(".capsule-background-text", {
+    opacity: 1,
+    duration: 1,
     ease: "none"
   });
 
-  // 4. Aparecer texto solo después de que imagen está en zoom completo
-  gsap.fromTo(".capsule-overlay",
+  // 2. Zoom de imagen progresivo
+  capsuleTimeline.to(".capsule-image", {
+    scale: 1.5,
+    duration: 1,
+    ease: "none"
+  }, 0); // sincronizado con texto de fondo
+
+  // 3. Mostrar el texto principal
+  capsuleTimeline.fromTo(".capsule-overlay",
     { opacity: 0, y: 40 },
-    {
-      opacity: 1,
-      y: 0,
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "70% center", // empieza ya cuando la imagen casi está en su punto final
-        end: "bottom top",
-        scrub: true
-      },
-      ease: "power2.out"
-    }
+    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+    ">-0.3"
   );
 });
