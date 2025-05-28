@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: true
     },
-    opacity: 1,
+    opacity: 100,
     ease: "none"
   });
 
