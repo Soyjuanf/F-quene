@@ -119,7 +119,7 @@ body {
 
 .capsule-text-section {
   background-color: #0a0a0a;
-  padding: 10rem 2rem;
+  padding: 8rem 2rem;
   display: flex;
   justify-content: center;
 }
@@ -128,19 +128,19 @@ body {
   display: flex;
   align-items: center;
   max-width: 1200px;
-  gap: 5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .capsule-images {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   flex-wrap: wrap;
 }
 
 .capsule-img {
   width: 250px;
-  height: 300px;
+  height: 450px;
   object-fit: cover;
   border-radius: 50px / 70px;
 }
@@ -149,7 +149,7 @@ body {
   max-width: 500px;
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #cfc6bb;
 }
