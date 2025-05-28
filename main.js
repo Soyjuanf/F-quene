@@ -13,47 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Scroll-fill (si lo tienes de antes)
-  gsap.to(".scroll-fill-text", {
-    scrollTrigger: {
-      trigger: ".scroll-fill-section",
-      start: "top 80%",
-      end: "top 30%",
-      scrub: true
-    },
-    clipPath: "inset(0 0% 0 0)",
-    ease: "none"
-  });
-
-  // Zoom de imagen
-  gsap.to(".capsule-image", {
-    scrollTrigger: {
-      trigger: ".capsule-transition-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    },
-    scale: 1.8,
-    ease: "none"
-  });
-
-  // Fade in del texto encima de la imagen
-  gsap.fromTo(".capsule-overlay", 
-    { opacity: 0, y: 30 }, 
-    {
-      opacity: 1,
-      y: 0,
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "top 60%",
-        end: "center top",
-        scrub: true
-      },
-      ease: "power2.out"
-    }
-  );
-
-  // Mostrar texto de fondo solo en esta sección
+  // Mostrar texto de fondo solo durante esta sección
   gsap.to(".capsule-background-text", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
@@ -61,38 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: true
     },
-    opacity: 0.1,
+    opacity: 0.05, // más visible que 0.1
     ease: "none"
   });
 
-  // 1. Zoom a la imagen mientras haces scroll
+  // Zoom de imagen al hacer scroll
   gsap.to(".capsule-image", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
       start: "top top",
-      end: "center top", // termina antes de que aparezca el texto
+      end: "center center", // SOLO hasta la mitad del scroll
       scrub: true
     },
     scale: 1.2,
     ease: "none"
   });
 
-  // 2. Fade-in del texto, comienza después del zoom
-  gsap.fromTo(".capsule-overlay",
-    { opacity: 0, y: 40 },
+  // Fade-in del texto después del zoom
+  gsap.fromTo(".capsule-overlay", 
+    { opacity: 0, y: 30 }, 
     {
       opacity: 1,
       y: 0,
       scrollTrigger: {
         trigger: ".capsule-transition-section",
-        start: "center top",   // comienza justo donde termina el zoom
+        start: "center center", // empieza justo cuando el zoom termina
         end: "bottom top",
         scrub: true
       },
       ease: "power2.out"
     }
   );
-});
-
-
 });
