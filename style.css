@@ -236,6 +236,14 @@ body {
   transform: scale(1.07);
 }
 
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #2d2621;
+  color: white;
+  overflow-x: hidden;
+}
+
 .capsule-transition-section {
   height: 200vh;
   position: relative;
@@ -253,8 +261,7 @@ body {
   animation: marquee 40s linear infinite;
   transform: translateY(-50%);
   z-index: 1;
-  transition: opacity 0.5s ease; /* suavidad por si no usas GSAP */
-  opacity: 0; /* Empieza oculto */
+  opacity: 0; /* inicial invisible */
   pointer-events: none;
 }
 
@@ -274,7 +281,7 @@ body {
 }
 
 .capsule-image {
-  width: 70%;
+  width: 60%;
   border-radius: 100px;
   transition: border-radius 0.5s ease;
 }
@@ -287,7 +294,6 @@ body {
   transform: translateY(-50%);
   opacity: 0;
   z-index: 3;
-  transition: opacity 0.5s ease; /* suavidad por si no usas GSAP */
 }
 
 .capsule-title {
