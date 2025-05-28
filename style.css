@@ -95,8 +95,8 @@ body {
   background-color: #0a0a0a;
   padding: 10rem 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 }
 
 .fill-text-container {
