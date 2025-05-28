@@ -10,10 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     clipPath: "inset(0 0% 0 0)", // Revela horizontalmente
     ease: "none"
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
 
   gsap.to(".capsule-image", {
     scrollTrigger: {
