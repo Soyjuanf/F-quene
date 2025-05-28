@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Efecto: Texto que se rellena horizontalmente
+  // 1. Efecto: Texto que se rellena horizontalmente (de otra sección)
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
       trigger: ".scroll-fill-section",
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Mostrar texto de fondo solo durante esta sección
+  // 2. Mostrar texto de fondo "FÚQUENE" solo durante la sección
   gsap.to(".capsule-background-text", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
@@ -21,35 +21,31 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: true
     },
-    opacity: 0.05, // más visible que 0.1
+    opacity: 0.05,
     ease: "none"
   });
 
-  // Zoom de imagen al hacer scroll
+  // 3. Zoom de imagen desde el principio hasta el final de la sección
   gsap.to(".capsule-image", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
       start: "top top",
-      end: "center center", // SOLO hasta la mitad del scroll
+      end: "bottom top",
       scrub: true
     },
-    scale: 1.2,
+    scale: 1.5,
     ease: "none"
   });
 
-  // Fade-in del texto después del zoom
-  gsap.fromTo(".capsule-overlay", 
-    { opacity: 0, y: 30 }, 
-    {
-      opacity: 1,
-      y: 0,
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "center center", // empieza justo cuando el zoom termina
-        end: "bottom top",
-        scrub: true
-      },
-      ease: "power2.out"
-    }
-  );
+  // 4. Mostrar texto sin transición (blanco y estático cuando se activa)
+  gsap.set(".capsule-overlay", {
+    scrollTrigger: {
+      trigger: ".capsule-transition-section",
+      start: "center center",
+      toggleActions: "play none none reverse"
+    },
+    opacity: 1,
+    y: 0
+  });
 });
+
