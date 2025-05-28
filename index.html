@@ -19,29 +19,17 @@
     </div>
   </section>
 
-<section class="svg-text-scroll">
-  <svg viewBox="0 0 1200 300" class="svg-scroll-text" preserveAspectRatio="xMinYMin meet">
-    <defs>
-      <mask id="reveal-mask">
-        <rect x="0" y="0" width="0" height="100%" fill="white" id="mask-rect" />
-      </mask>
-    </defs>
-
-    <!-- fondo gris -->
-    <foreignObject x="0" y="0" width="100%" height="100%">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="text-layer text-gray">
-        Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
-      </div>
-    </foreignObject>
-
-    <!-- texto blanco con máscara -->
-    <foreignObject x="0" y="0" width="100%" height="100%" mask="url(#reveal-mask)">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="text-layer text-white">
-        Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
-      </div>
-    </foreignObject>
-  </svg>
+<section class="scroll-reveal-paragraph">
+  <div class="paragraph-wrapper">
+    <p class="paragraph-base">
+      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
+    </p>
+    <p class="paragraph-fill scroll-clip">
+      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
+    </p>
+  </div>
 </section>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
