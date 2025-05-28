@@ -64,4 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0.1,
     ease: "none"
   });
+
+  // 1. Zoom a la imagen mientras haces scroll
+  gsap.to(".capsule-image", {
+    scrollTrigger: {
+      trigger: ".capsule-transition-section",
+      start: "top top",
+      end: "center top", // termina antes de que aparezca el texto
+      scrub: true
+    },
+    scale: 1.2,
+    ease: "none"
+  });
+
+  // 2. Fade-in del texto, comienza después del zoom
+  gsap.fromTo(".capsule-overlay",
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "center top",   // comienza justo donde termina el zoom
+        end: "bottom top",
+        scrub: true
+      },
+      ease: "power2.out"
+    }
+  );
+});
+
+
 });
