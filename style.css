@@ -97,27 +97,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .fill-text-container {
-  position: relative;
   max-width: 1000px;
+  position: relative;
   font-size: 3.5rem;
   font-weight: 300;
+  font-family: 'Inter', sans-serif;
   line-height: 1.4;
   text-align: left;
-  font-family: 'Inter', sans-serif;
+  margin: 0 auto;
 }
 
 .text-base,
 .text-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: pre-wrap;
-  width: 100%;
   margin: 0;
+  white-space: normal;
 }
 
 .text-base {
@@ -127,8 +123,13 @@ body {
 
 .text-fill {
   color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 2;
-  clip-path: inset(0 100% 0 0); /* Oculto desde la derecha */
+  clip-path: inset(0 100% 0 0);
+  pointer-events: none;
 }
 
 .capsule-text-section {
