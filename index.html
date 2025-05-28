@@ -19,15 +19,20 @@
     </div>
   </section>
 
-<section class="scroll-fill-section">
-  <div class="scroll-fill-wrapper">
-    <p class="text-base">
-      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
-    </p>
-    <p class="text-fill scroll-fill-text">
-      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses, nestled in one of the most breathtaking destinations in the United States.
-    </p>
-  </div>
+<section class="svg-text-scroll">
+  <svg viewBox="0 0 1600 300" class="svg-scroll-text" preserveAspectRatio="xMinYMin meet">
+    <defs>
+      <mask id="reveal-mask">
+        <rect x="0" y="0" width="0" height="100%" fill="white" id="mask-rect"/>
+      </mask>
+    </defs>
+    <text x="0" y="150" font-size="80" font-family="Inter, sans-serif" fill="#444">
+      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses.
+    </text>
+    <text x="0" y="150" font-size="80" font-family="Inter, sans-serif" fill="white" mask="url(#reveal-mask)">
+      Welcome to a world of wild California desert with Capsules®, where you will discover exquisite nature observing it from capsule houses.
+    </text>
+  </svg>
 </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
