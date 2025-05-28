@@ -29,21 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // Zoom y transformación visual de la imagen
-  gsap.fromTo(".capsule-image",
-    {
-      scale: 0.6,
-      borderRadius: "100px"
-    },
-    {
-      scale: 1,
-      borderRadius: "0px",
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      },
-      ease: "power2.out"
+ gsap.to(".capsule-image", {
+  scale: 1,
+  borderRadius: "0px",
+  scrollTrigger: {
+    trigger: ".capsule-transition-section",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  },
+  ease: "power2.out"
     }
   );
 
