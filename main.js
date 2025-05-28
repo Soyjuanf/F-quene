@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".scroll-reveal-text", {
+  gsap.to(".scroll-fill-text", {
     scrollTrigger: {
-      trigger: ".scroll-reveal-text",
-      start: "top 90%",
-      end: "top 30%",
+      trigger: ".scroll-fill-section",
+      start: "top 80%",
+      end: "top 20%",
       scrub: true
     },
-    color: "#ffffff"
+    clipPath: "inset(0% 0 0 0)",
+    ease: "none"
   });
 });
