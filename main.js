@@ -13,7 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Zoom de la imagen al hacer scroll
+  // Scroll-fill (si lo tienes de antes)
+  gsap.to(".scroll-fill-text", {
+    scrollTrigger: {
+      trigger: ".scroll-fill-section",
+      start: "top 80%",
+      end: "top 30%",
+      scrub: true
+    },
+    clipPath: "inset(0 0% 0 0)",
+    ease: "none"
+  });
+
+  // Zoom de imagen
   gsap.to(".capsule-image", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
@@ -21,19 +33,35 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: true
     },
-    scale: 1.2
+    scale: 1.8,
+    ease: "none"
   });
 
-  // Fade in del texto al hacer scroll
-  gsap.to(".capsule-overlay", {
+  // Fade in del texto encima de la imagen
+  gsap.fromTo(".capsule-overlay", 
+    { opacity: 0, y: 30 }, 
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "top 60%",
+        end: "center top",
+        scrub: true
+      },
+      ease: "power2.out"
+    }
+  );
+
+  // Mostrar texto de fondo solo en esta sección
+  gsap.to(".capsule-background-text", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
-      start: "top 60%",
-      end: "top 30%",
+      start: "top bottom",
+      end: "bottom top",
       scrub: true
     },
-    opacity: 1,
-    y: -30,
-    ease: "power1.out"
+    opacity: 0.1,
+    ease: "none"
   });
 });
