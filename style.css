@@ -92,10 +92,12 @@ body {
 }
 
 .scroll-fill-section {
-  background-color: #0a0a0a;
   padding: 10rem 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0a0a0a;
 }
 
 .fill-text-container {
@@ -108,8 +110,10 @@ body {
 }
 
 .text-reveal {
-  background: linear-gradient(to right, white 0%, white 0%, #444 0%, #444 100%);
-  background-clip: text;
+  background-image: linear-gradient(to right, white 50%, #444 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
