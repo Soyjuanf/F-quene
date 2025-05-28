@@ -36,4 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 1,
     ease: "none"
   });
+
+    // Efecto: Mostrar el texto de fondo solo en su sección
+  gsap.to(".capsule-background-text", {
+    scrollTrigger: {
+      trigger: ".capsule-transition-section",
+      start: "top bottom",     // Comienza cuando empieza a entrar
+      end: "bottom top",       // Termina cuando ya no se ve
+      scrub: true
+    },
+    opacity: 0.1,
+    ease: "none"
+  });
 });
