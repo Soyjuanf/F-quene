@@ -227,11 +227,11 @@ body {
 }
 
 .tag:hover {
-  transform: scale(1.05);
+  transform: scale(2);
   color: white;
   border-color: white;
 }
 
 .tag.selected:hover {
-  transform: scale(1.03);
+  transform: scale(1.5);
 }
