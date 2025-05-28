@@ -92,43 +92,37 @@ body {
 }
 
 .scroll-fill-section {
-  background-color: #0a0a0a;
+  background: #0a0a0a;
   padding: 10rem 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;
 }
 
-.fill-text-container {
-  position: relative;
+.fill-text-wrapper {
   max-width: 1000px;
+  position: relative;
   font-size: 3.5rem;
-  font-family: 'Inter', sans-serif;
   font-weight: 300;
+  font-family: 'Inter', sans-serif;
   line-height: 1.4;
-  text-align: left;
-}
-
-.text-base,
-.text-fill {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: normal;
-  width: 100%;
-}
-
-.text-base {
   color: #444;
+}
+
+.text-layer {
+  position: relative;
+  margin: 0;
   z-index: 1;
 }
 
-.text-fill {
+.text-layer::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: pre-wrap;
   color: white;
   z-index: 2;
-  clip-path: inset(0 100% 0 0); /* Comienza oculto desde la derecha */
-  transition: clip-path 0.3s ease;
+  pointer-events: none;
 }
