@@ -235,3 +235,86 @@ body {
 .tag.selected:hover {
   transform: scale(1.07);
 }
+
+.capsule-transition-section {
+  position: relative;
+  height: 100vh;
+  background: #2d2621;
+  overflow: hidden;
+}
+
+.capsule-background-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 18rem;
+  color: #f0ede7;
+  white-space: nowrap;
+  animation: scrollInfinite 40s linear infinite;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+@keyframes scrollInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.capsule-zoom-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.capsule-image {
+  width: 60%;
+  border-radius: 100px;
+  transition: transform 1s ease;
+}
+
+.capsule-overlay {
+  position: absolute;
+  color: white;
+  opacity: 0;
+  text-align: left;
+  width: 90%;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s ease;
+}
+
+.capsule-title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.capsule-desc {
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.capsule-scroll {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.capsule-plus {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  border: none;
+}
