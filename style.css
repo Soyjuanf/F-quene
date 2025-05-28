@@ -292,8 +292,10 @@ body {
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  opacity: 0;
+  max-width: 500px;
+  opacity: 0; /* se controla vía JS */
   z-index: 3;
+  color: white; /* forzamos blanco total */
 }
 
 .capsule-title {
