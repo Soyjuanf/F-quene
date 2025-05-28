@@ -244,61 +244,22 @@ body {
   overflow-x: hidden;
 }
 
-.capsule-transition-section {
-  height: 200vh;
-  position: relative;
-  background-color: #1f1a17;
-  overflow: hidden;
-}
-
-.capsule-background-text {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 18rem;
-  font-weight: bold;
-  white-space: nowrap;
-  color: white;
-  animation: marquee 40s linear infinite;
-  z-index: 1;
-  opacity: 0;
-  pointer-events: none;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateY(-50%) translateX(0);
-  }
-  100% {
-    transform: translateY(-50%) translateX(-50%);
-  }
-}
-
 .capsule-zoom-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 200vh; /* altura de la sección */
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .capsule-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
   width: 90vw;
   height: auto;
   object-fit: cover;
-  transition: border-radius 0.3s ease;
-}
-
-.capsule-overlay {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  max-width: 600px;
-  color: white;
-  z-index: 3;
-  opacity: 0;
+  border-radius: 100px;
+  z-index: 2;
+  transform-origin: center center;
 }
