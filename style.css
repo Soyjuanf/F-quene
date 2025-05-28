@@ -227,7 +227,7 @@ body {
 }
 
 .tag:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   color: white;
   border-color: white;
 }
