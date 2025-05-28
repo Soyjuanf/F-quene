@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Texto que se rellena (otra sección)
+  // Texto que se rellena horizontalmente (otra sección)
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
       trigger: ".scroll-fill-section",
@@ -13,36 +13,49 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // SECCIÓN CAPSULE - usar timeline para más control
-  const capsuleTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".capsule-transition-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-      pin: ".capsule-zoom-container",
-      anticipatePin: 1
+  // Texto de fondo (FÚQUENE): aparece fijo al inicio de la sección
+  gsap.fromTo(".capsule-background-text",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      },
+      ease: "none"
     }
-  });
+  );
 
-  // 1. Texto de fondo: opacidad 1 siempre
-  capsuleTimeline.to(".capsule-background-text", {
-    opacity: 1,
-    duration: 1,
-    ease: "none"
-  });
+  // Imagen hace zoom desde escala 1 → 1.5
+  gsap.fromTo(".capsule-image",
+    { scale: 1 }, // arranca más pequeña
+    {
+      scale: 1.5,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      },
+      ease: "none"
+    }
+  );
 
-  // 2. Zoom de imagen progresivo
-  capsuleTimeline.to(".capsule-image", {
-    scale: 1.5,
-    duration: 1,
-    ease: "none"
-  }, 0); // sincronizado con texto de fondo
-
-  // 3. Mostrar el texto principal
-  capsuleTimeline.fromTo(".capsule-overlay",
+  // Texto aparece cuando zoom está casi completo
+  gsap.fromTo(".capsule-overlay",
     { opacity: 0, y: 40 },
-    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-    ">-0.3"
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "70% center", // espera al final del zoom
+        end: "bottom top",
+        scrub: true
+      },
+      ease: "power2.out"
+    }
   );
 });
