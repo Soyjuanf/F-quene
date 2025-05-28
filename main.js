@@ -48,4 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 1,
     ease: "none"
   });
+
+    gsap.fromTo(".capsule-overlay", 
+    { opacity: 0 }, 
+    {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "top 60%",
+        end: "center top",
+        scrub: true
+      },
+      ease: "power2.out"
+    }
+  );
 });
