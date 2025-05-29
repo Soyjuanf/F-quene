@@ -383,77 +383,74 @@ body {
 
 .gallery-section {
   background-color: #fff;
-  height: 100vh; /* OJO: cambia padding por height */
-  padding: 0; /* Elimina padding vertical para evitar overflow */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 90vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   width: 90vw;
-  gap: 1.5vw;
+  height: 90vh;
+  gap: 1vw;
 }
 
 .gallery-item {
   position: relative;
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
+  background-color: #000;
 }
 
+/* Imagen de fondo */
 .image-layer {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  transition: opacity 0.4s ease;
   z-index: 1;
+  transition: opacity 0.4s ease;
 }
 
-.text-layer {
+/* Capa de hover: negro con texto blanco */
+.hover-layer {
   position: absolute;
   inset: 0;
-  background-color: white;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
   text-align: center;
-  padding: 1.5rem;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-}
-
-.gallery-item:hover .image-layer {
   opacity: 0;
+  z-index: 2;
+  padding: 1rem;
+  transition: opacity 0.4s ease;
 }
 
-.gallery-item:hover .text-layer {
-  opacity: 1;
-}
-
-.text-layer h2 {
-  font-size: 1.5rem;
+.hover-layer h2 {
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
-.text-layer p {
+.hover-layer p {
   font-size: 1rem;
-  max-width: 90%;
+  max-width: 80%;
   line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+.gallery-item:hover .hover-layer {
+  opacity: 1;
+}
+
+.gallery-item:hover .image-layer {
+  opacity: 0.2;
 }
