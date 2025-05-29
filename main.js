@@ -120,24 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   );
-// Transición de fondo blanco (clip-path)
-  gsap.to(".white-reveal", {
+// TRANSICIÓN DEL FONDO
+  gsap.to(".white-overlay", {
     clipPath: "inset(0% 0 0 0)",
-    duration: 1.5,
     ease: "power2.inOut",
     scrollTrigger: {
       trigger: ".transition-section",
-      start: "top center",
-      end: "bottom center",
+      start: "top bottom",
+      end: "top top",
       scrub: true
     }
   });
 
-  // Animación de entrada para los ítems de la galería
-  gsap.utils.toArray(".gallery-item").forEach((item, i) => {
+  // APARICIÓN DE LA GALERÍA
+  gsap.utils.toArray(".gallery-item").forEach((item) => {
     gsap.from(item, {
       opacity: 0,
-      y: 60,
+      y: 80,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
@@ -148,4 +147,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
