@@ -272,7 +272,7 @@ body {
 }
 
 .capsule-zoom-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   height: 100vh;
   display: flex;
