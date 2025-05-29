@@ -245,65 +245,63 @@ body {
 }
 
 .capsule-transition-section {
-  position: relative;
   height: 200vh;
-  background-color: #1f1a17;
-  overflow: hidden;
+  position: relative;
+  background-color: #2d2621;
 }
 
 .capsule-background-text {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
   font-size: 18rem;
-  font-weight: 800;
+  font-weight: 700;
   white-space: nowrap;
-  color: white;
-  animation: marquee 30s linear infinite;
+  color: #f0ede7;
+  animation: marquee 40s linear infinite;
+  transform: translateY(-50%);
   z-index: 1;
-  opacity: 0.05;
-  pointer-events: none;
+  opacity: 0.1;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%) translateY(-50%); }
+  100% { transform: translateX(-50%) translateY(-50%); }
 }
 
 .capsule-zoom-container {
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  overflow: hidden;
 }
 
 .capsule-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.6);
-  width: 90vw;
-  height: auto;
-  object-fit: cover;
+  width: 60%;
   border-radius: 100px;
-  transform-origin: center center;
-  transition: transform 0.5s ease;
+  transition: border-radius 0.5s ease;
 }
 
 .capsule-overlay {
   position: absolute;
+  text-align: left;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  max-width: 600px;
-  color: white;
-  z-index: 3;
   opacity: 0;
+  z-index: 3;
 }
+
+.capsule-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.capsule-desc {
+  font-size: 1rem;
+  max-width: 400px;
+}
+
