@@ -261,7 +261,7 @@ body {
   animation: marquee 40s linear infinite;
   transform: translateY(-50%);
   z-index: 1;
-  opacity: 1; /* Empieza oculto */
+  opacity: 0; /* Empieza oculto */
   pointer-events: none;
 }
 
