@@ -244,22 +244,45 @@ body {
   overflow-x: hidden;
 }
 
-.capsule-zoom-container {
+.capsule-transition-section {
   position: relative;
-  width: 100%;
-  height: 200vh; /* altura de la sección */
+  height: 200vh;
+  background-color: #1f1a17;
+  overflow: hidden;
+}
+
+.capsule-background-text {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 18rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: white;
+  animation: marquee 40s linear infinite;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.capsule-zoom-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   z-index: 2;
+  overflow: hidden;
 }
 
 .capsule-image {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.6);
   width: 90vw;
   height: auto;
-  object-fit: cover;
+  transform: translate(-50%, -50%) scale(0.6);
+  transform-origin: center center;
   border-radius: 100px;
   z-index: 2;
-  transform-origin: center center;
+  object-fit: cover;
 }
