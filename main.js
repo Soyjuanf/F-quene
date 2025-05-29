@@ -128,6 +128,22 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 90%",
       end: "top top",
       scrub: true
-    }
+     }
+   }
+ );
+// Animación de entrada de los items
+  gsap.utils.toArray(".gallery-item").forEach((item) => {
+    gsap.from(item, {
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
   });
 });
+
