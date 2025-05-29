@@ -130,19 +130,4 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true
     }
   });
-
-  // Galería entra después
-  gsap.utils.toArray(".gallery-item").forEach((item) => {
-    gsap.from(item, {
-      opacity: 0,
-      y: 80,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: item,
-        start: "top 90%",
-        toggleActions: "play none none none"
-      }
-    });
-  });
 });
