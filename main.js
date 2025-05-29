@@ -4,33 +4,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
 
+  const durations = [150, 150, 100]; // VH que dura cada imagen
+
   images.forEach((img, i) => {
+    const start = durations.slice(0, i).reduce((a, b) => a + b, 0);
+    const end = start + durations[i];
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pin-section",
-        start: `${i * 100}vh top`,
-        end: `${(i + 1) * 100}vh top`,
-        scrub: true
+        start: `${start}vh top`,
+        end: `${end}vh top`,
+        scrub: true,
       }
     });
 
-    tl.to(img, { opacity: 1, scale: 1.05, duration: 1 });
+    tl.to(img, { opacity: 1, scale: 1.1, duration: 1 });
     tl.to(texts[i], { opacity: 1 }, "<+0.3");
     tl.to(texts[i], { opacity: 0 }, ">+0.6");
   });
 
   gsap.set([".image-2", ".image-3"], { zIndex: (i) => i + 2 });
   gsap.set(".image-1", { zIndex: 1 });
-
-  gsap.to(".marquee", {
-    scrollTrigger: {
-      trigger: ".pin-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-    opacity: 1
-  });
 
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
