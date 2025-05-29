@@ -121,13 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 // Transición del fondo blanco encima de la sección negra
-  gsap.to(".white-overlay", {
+  gsap.to(".white-transition-overlay", {
     clipPath: "inset(0% 0 0 0)",
     ease: "power2.inOut",
     scrollTrigger: {
-      trigger: ".desert-section",
-      start: "bottom bottom",
-      end: "bottom top",
+      trigger: ".transition-section",
+      start: "top bottom",
+      end: "top top",
       scrub: true
     }
   });
