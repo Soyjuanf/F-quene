@@ -135,45 +135,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // Mostrar el degradado al comenzar transición
-  ScrollTrigger.create({
-    trigger: ".transition-section",
-    start: "top bottom",
-    end: "top top",
-    onEnter: () => {
-      const fade = document.querySelector(".black-to-white-transition");
-      fade.style.display = "block";
-      gsap.to(fade, { opacity: 1, duration: 0.5, ease: "power2.out" });
-    },
-    onLeave: () => {
-      const fade = document.querySelector(".black-to-white-transition");
-      gsap.to(fade, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: () => {
-          fade.style.display = "none";
-        }
-      });
-    },
-    scrub: true
-  });
-
-  // También oculta si el usuario hace scroll rápido a la galería
-  ScrollTrigger.create({
-    trigger: ".gallery-section",
-    start: "top 90%",
-    onEnter: () => {
-      const fade = document.querySelector(".black-to-white-transition");
-      gsap.to(fade, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: () => {
-          fade.style.display = "none";
-        }
-      });
-    }
-  });
 });
