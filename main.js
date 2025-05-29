@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",       // Termina cuando ya no se ve
       scrub: true
     },
-    opacity: 100,
+    opacity: 5,
     ease: "none"
   });
 });
