@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top top",
       end: `+=${slides.length * 100}%`,
       scrub: true,
-      pin: true,
+      pin: true
     }
   });
 });
