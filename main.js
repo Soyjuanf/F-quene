@@ -13,21 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
- // Texto infinito visible en esta sección
-  gsap.fromTo(".capsule-background-text",
-    { opacity: 0 },
-    {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
-    }
-  );
-
-  // Zoom de imagen sin moverse del centro
+// Imagen: zoom del 0.6 al 1, y quitar borde redondo
   gsap.to(".capsule-image", {
     scale: 1,
     borderRadius: "0px",
@@ -39,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Aparece el texto al final del zoom
+  // Overlay: aparece con scroll (cuando imagen ya está haciendo zoom)
   gsap.fromTo(".capsule-overlay",
     { opacity: 0, y: 40 },
     {
@@ -47,11 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
       y: 0,
       scrollTrigger: {
         trigger: ".capsule-transition-section",
-        start: "70% center",
+        start: "75% center",
         end: "bottom top",
         scrub: true
-      },
-      ease: "power2.out"
+      }
     }
   );
 });
