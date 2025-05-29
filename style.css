@@ -236,15 +236,6 @@ body {
   transform: scale(1.07);
 }
 
-.prev-section, .next-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-  color: white;
-}
-
 .pin-section {
   height: 300vh;
   position: relative;
@@ -311,22 +302,4 @@ body {
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
-}
-
-.scroll-fill-section {
-  height: 100vh;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.scroll-fill-text {
-  font-size: 3rem;
-  font-weight: bold;
-  background: black;
-  color: white;
-  padding: 1rem 2rem;
-  clip-path: inset(0 100% 0 0);
 }
