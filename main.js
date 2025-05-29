@@ -53,18 +53,28 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  const frames = gsap.utils.toArray(".scroll-frame");
+  // Eliminar el texto de fondo FÚQUENE al entrar en galería
+  ScrollTrigger.create({
+    trigger: ".scroll-gallery-section",
+    start: "top center",
+    onEnter: () => {
+      gsap.to(".capsule-background-text", {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    }
+  });
 
-  frames.forEach((frame, i) => {
+  // Animaciones de cada imagen
+  gsap.utils.toArray(".scroll-gallery-frame").forEach((frame, i) => {
     gsap.to(frame, {
-      opacity: 1,
-      zIndex: i + 1, // asegura el orden
+      y: "0%",
       scrollTrigger: {
         trigger: ".scroll-gallery-section",
-        start: () => `top+=${window.innerHeight * i} top`,
-        end: () => `top+=${window.innerHeight * (i + 1)} top`,
-        scrub: true,
-        toggleActions: "play none none reverse"
+        start: () => `top+=${i * window.innerHeight} top`,
+        end: () => `top+=${(i + 1) * window.innerHeight} top`,
+        scrub: true
       }
     });
   });
