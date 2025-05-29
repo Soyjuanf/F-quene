@@ -309,27 +309,24 @@ body {
 
 .scroll-gallery-section {
   position: relative;
-  height: 300vh; /* para 3 imágenes */
-  z-index: 10;
-}
-
-.scroll-gallery-container {
-  position: sticky;
-  top: 0;
+  height: 300vh; /* 3 pantallas */
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  z-index: 20;
 }
 
-.scroll-frame {
-  position: absolute;
+.scroll-gallery-frame {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  transform: translateY(100%);
+  will-change: transform;
 }
 
+.scroll-gallery-frame img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
