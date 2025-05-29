@@ -318,7 +318,7 @@ body {
 .desert-section {
   padding: 5vh 8vw;
   background-color: #000;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -496,7 +496,7 @@ body {
 .map-title {
   padding: 5vh 8vw;
   background-color: #000;
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
