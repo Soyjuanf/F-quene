@@ -488,3 +488,8 @@ body {
 .desert-section-light .right-info {
   color: #333;
 }
+
+.gradient-transition-2 {
+  height: 50vh;
+  background: linear-gradient(to bottom, #ffffff 0%, #0a0a0a 100%);
+}
