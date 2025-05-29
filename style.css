@@ -516,3 +516,10 @@ body {
   height: 100%;
   border: 0;
 }
+.map-title {
+  font-size: 10vw;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 5vh;
+  color: #f3efe6;
+}
