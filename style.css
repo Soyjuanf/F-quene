@@ -517,6 +517,17 @@ body {
   border: 0;
 }
 .map-title {
+  padding: 5vh 8vw;
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.main-title-map {
   font-size: 8vw;
   font-weight: 300;
   line-height: 1.1;
