@@ -4,27 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
 
+  const sectionDuration = 200; // Altura virtual por imagen (en vh)
+
   images.forEach((img, i) => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".pin-section",
-        start: `${i * 100}vh top`,
-        end: `${(i + 1) * 100}vh top`,
+        start: `${i * sectionDuration}vh top`,
+        end: `${(i + 1) * sectionDuration}vh top`,
         scrub: true,
         pin: i === 0,
       }
     });
 
     timeline.to(img, { opacity: 1, scale: 1.1, duration: 1 });
-    timeline.to(texts[i], { opacity: 1 }, "<+0.2");
-    timeline.to(texts[i], { opacity: 0 }, `>+0.5`);
+    timeline.to(texts[i], { opacity: 1 }, "<+0.3");
+    timeline.to(texts[i], { opacity: 0 }, `>+0.6`);
   });
 
-  // Asegurar orden de apilamiento
   gsap.set([".image-2", ".image-3"], { zIndex: (i) => i + 2 });
   gsap.set(".image-1", { zIndex: 1 });
 
-  // Marquesina durante scroll
   gsap.to(".marquee", {
     scrollTrigger: {
       trigger: ".pin-section",
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 1
   });
 
-  // Texto que se rellena horizontalmente
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
       trigger: ".scroll-fill-section",
@@ -47,4 +46,3 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 });
-
