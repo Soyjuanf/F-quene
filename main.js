@@ -4,22 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
 
-  const sectionDuration = 200; // Altura virtual por imagen (en vh)
-
   images.forEach((img, i) => {
-    const timeline = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pin-section",
-        start: `${i * sectionDuration}vh top`,
-        end: `${(i + 1) * sectionDuration}vh top`,
-        scrub: true,
-        pin: i === 0,
+        start: `${i * 100}vh top`,
+        end: `${(i + 1) * 100}vh top`,
+        scrub: true
       }
     });
 
-    timeline.to(img, { opacity: 1, scale: 1.1, duration: 1 });
-    timeline.to(texts[i], { opacity: 1 }, "<+0.3");
-    timeline.to(texts[i], { opacity: 0 }, `>+0.6`);
+    tl.to(img, { opacity: 1, scale: 1.05, duration: 1 });
+    tl.to(texts[i], { opacity: 1 }, "<+0.3");
+    tl.to(texts[i], { opacity: 0 }, ">+0.6");
   });
 
   gsap.set([".image-2", ".image-3"], { zIndex: (i) => i + 2 });
