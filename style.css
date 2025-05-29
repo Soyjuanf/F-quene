@@ -452,48 +452,63 @@ body {
 .gallery-item:hover .overlay p {
   opacity: 1;
 }
-.desert-activities-inverted {
+.desert-section {
+  padding: 5vh 8vw;
+  background-color: #fffff;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: #fff; /* FONDO BLANCO */
-  color: #000;            /* TEXTO NEGRO */
-  padding: 60px 80px;
-  font-family: 'Helvetica Neue', sans-serif;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
-.desert-activities-inverted .left,
-.desert-activities-inverted .right {
-  flex: 1 1 45%;
-}
-
-.desert-activities-inverted h1 {
-  font-size: 5rem;
+.main-title {
+  font-size: 10vw;
+  font-weight: 900;
   line-height: 1.1;
-  font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
+  color: #0a0a0a;
 }
 
-.desert-activities-inverted .note {
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  font-weight: 500;
+.info-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4vw;
+  flex-wrap: wrap;
 }
 
-.desert-activities-inverted .levels {
+.left-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+.difficulty-list {
   list-style: none;
-  padding: 0;
+  border-top: 1px solid #444;
+}
+
+.difficulty-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #444;
+  color: #0a0a0a;
   font-size: 1.1rem;
 }
 
-.desert-activities-inverted .levels li {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.desert-activities-inverted .right p {
-  font-size: 1.25rem;
-  line-height: 1.6;
+.right-info {
+  flex: 2;
+  min-width: 300px;
+  color: #0a0a0a;
+  font-size: 1.2rem;
 }
