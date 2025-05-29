@@ -120,19 +120,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   );
-// TRANSICIÓN DEL FONDO
+// Transición del fondo blanco encima de la sección negra
   gsap.to(".white-overlay", {
     clipPath: "inset(0% 0 0 0)",
     ease: "power2.inOut",
     scrollTrigger: {
-      trigger: ".transition-section",
-      start: "top bottom",
-      end: "top top",
+      trigger: ".desert-section",
+      start: "bottom bottom",
+      end: "bottom top",
       scrub: true
     }
   });
 
-  // APARICIÓN DE LA GALERÍA
+  // Galería entra después
   gsap.utils.toArray(".gallery-item").forEach((item) => {
     gsap.from(item, {
       opacity: 0,
