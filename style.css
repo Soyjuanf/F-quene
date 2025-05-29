@@ -266,6 +266,7 @@ body {
   color: white;
   animation: scroll-left 20s linear infinite;
   padding-right: 100%;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* ⬅️ NUEVO */
 }
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
