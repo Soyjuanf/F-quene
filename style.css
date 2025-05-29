@@ -307,3 +307,28 @@ body {
   max-width: 400px;
 }
 
+.gallery-section {
+  position: relative;
+  height: 300vh; /* 3 slides x 100vh */
+}
+
+.gallery-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gallery-slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-slide img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
