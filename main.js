@@ -120,13 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   );
-// Transición del fondo blanco encima de la sección negra
-  gsap.to(".white-transition-overlay", {
-    clipPath: "inset(0% 0 0 0)",
-    ease: "power2.inOut",
+// Activar degradado de transición
+  gsap.to(".black-to-white-transition", {
+    opacity: 1,
     scrollTrigger: {
-      trigger: ".transition-section",
-      start: "top bottom",
+      trigger: ".transition-section", // o puedes usar ".gallery-section"
+      start: "top 90%",
       end: "top top",
       scrub: true
     }
