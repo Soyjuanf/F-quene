@@ -290,8 +290,8 @@ body {
 .capsule-overlay {
   position: absolute;
   text-align: left;
-  top: 50%;
-  left: 30%;
+  top: 85%;
+  left: 12%;
   transform: translateY(-50%);
   opacity: 0;
   z-index: 3;
