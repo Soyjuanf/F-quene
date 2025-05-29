@@ -519,7 +519,7 @@ body {
 .map-container {
   position: relative;
   width: 100%;
-  padding-bottom: 70.25%; /* Relación 16:9 */
+  padding-bottom: 55.25%; /* Relación 16:9 */
   height: 0;
   overflow: hidden;
   border-radius: 50px;
