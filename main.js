@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
  // Capsule
   gsap.fromTo(".capsule-overlay", 
-    { opacity: 0, y: 30 }, 
+    { opacity: 0, y: 80 }, 
     {
       opacity: 1,
       y: 0,
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",       // Termina cuando ya no se ve
       scrub: true
     },
-    opacity: 0.1,
+    opacity: 1,
     ease: "none"
   });
 });
