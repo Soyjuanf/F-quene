@@ -291,7 +291,7 @@ body {
   position: absolute;
   text-align: left;
   top: 50%;
-  left: 5%;
+  left: 30%;
   transform: translateY(-50%);
   opacity: 0;
   z-index: 3;
