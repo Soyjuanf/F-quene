@@ -120,5 +120,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   );
+// Transición de fondo blanco (clip-path)
+  gsap.to(".white-reveal", {
+    clipPath: "inset(0% 0 0 0)",
+    duration: 1.5,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".transition-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true
+    }
+  });
+
+  // Animación de entrada para los ítems de la galería
+  gsap.utils.toArray(".gallery-item").forEach((item, i) => {
+    gsap.from(item, {
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+  });
 });
 
