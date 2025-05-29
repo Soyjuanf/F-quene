@@ -48,85 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Clip-path horizontal (sección extra)
-  gsap.to(".scroll-fill-text", {
-    scrollTrigger: {
-      trigger: ".scroll-fill-section",
-      start: "top 80%",
-      end: "top 30%",
-      scrub: true
-    },
-    clipPath: "inset(0 0% 0 0)",
-    ease: "none"
+  // Sección Split-Gallery (nuevo comportamiento estilo Capsules)
+  const galleryImages = [ "#image-1", "#image-2", "#image-3" ];
+  const galleryTexts  = [ "#text-1", "#text-2", "#text-3" ];
+
+  galleryImages.forEach((img, i) => {
+    gsap.set(img, { opacity: 0 });
+    gsap.to(img, {
+      scrollTrigger: {
+        trigger: ".scroll-split-gallery",
+        start: `${i * 100}% top`,
+        end: `${(i + 1) * 100}% top`,
+        scrub: true
+      },
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut"
+    });
   });
 
-  // Animar textos
-  gsap.set(".gallery-image", {opacity: 0});
-  gsap.set(".text-block", {opacity: 0});
-
-  gsap.to("#image-1", {
-   scrollTrigger: {
-     trigger: ".scroll-split-gallery",
-     start: "top top",
-     end: "+=100%",
-     scrub: true
-   },
-   opacity: 1,
-   transform: "scale(1)"
- });
-
-gsap.to("#text-1", {
-  scrollTrigger: {
-    trigger: ".scroll-split-gallery",
-    start: "top top",
-    end: "+=100%",
-    scrub: true
-  },
-  opacity: 1
-});
-
-gsap.to("#image-2", {
-  scrollTrigger: {
-    trigger: ".scroll-split-gallery",
-    start: "+=100%",
-    end: "+=100%",
-    scrub: true
-  },
-  opacity: 1,
-  transform: "scale(1)"
-});
-
-gsap.to("#text-2", {
-  scrollTrigger: {
-    trigger: ".scroll-split-gallery",
-    start: "+=100%",
-    end: "+=100%",
-    scrub: true
-  },
-  opacity: 1
-});
-
-gsap.to("#image-3", {
-  scrollTrigger: {
-    trigger: ".scroll-split-gallery",
-    start: "+=200%",
-    end: "+=100%",
-    scrub: true
-  },
-  opacity: 1,
-  transform: "scale(1)"
-});
-
-gsap.to("#text-3", {
-  scrollTrigger: {
-    trigger: ".scroll-split-gallery",
-    start: "+=200%",
-    end: "+=100%",
-    scrub: true
-  },
-  opacity: 1
-        }
-      }
-    );
+  galleryTexts.forEach((txt, i) => {
+    gsap.set(txt, { opacity: 0 });
+    gsap.to(txt, {
+      scrollTrigger: {
+        trigger: ".scroll-split-gallery",
+        start: `${i * 100}% top`,
+        end: `${(i + 1) * 100}% top`,
+        scrub: true
+      },
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut"
+    });
   });
 });
