@@ -21,7 +21,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 2rem;
+  padding: 0.08rem;
   color: white;
   overflow: hidden;
 }
@@ -32,7 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 0.08rem;
 }
 
 .hero-logo {
@@ -78,7 +78,7 @@ body {
 
 .scroll-fill-section {
   background-color: #0a0a0a;
-  padding: 10rem 2rem;
+  padding: 1rem 0.08rem;
   display: flex;
   justify-content: left;
   align-items: left;
@@ -156,7 +156,7 @@ body {
 
 .choose-section {
   background: #0a0a0a;
-  padding: 12rem 2rem;
+  padding: 5rem 0.8rem;
   color: #e9e2d0;
   display: flex;
   justify-content: center;
@@ -181,7 +181,7 @@ body {
   font-size: 6rem;
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
   color: #f7f4ec;
 }
 
@@ -214,7 +214,7 @@ body {
 }
 
 .tag {
-  padding: 1rem 2.5rem;
+  padding: 0.7rem 1rem;
   border-radius: 9999px;
   border: 2px solid #eae4d9;
   font-size: 1.4rem;
