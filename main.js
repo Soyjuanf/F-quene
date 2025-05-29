@@ -26,14 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
  // Capsule
-  gsap.to(".capsule-overlay", {
+  gsap.fromTo(".capsule-overlay", 
+    { opacity: 0, y: 30 }, 
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: ".capsule-transition-section",
+        start: "top 60%",
+        end: "center top",
+        scrub: true
+      },
+      ease: "power2.out"
+    }
+  );
+
+    // Efecto: Mostrar el texto de fondo solo en su sección
+  gsap.to(".capsule-background-text", {
     scrollTrigger: {
       trigger: ".capsule-transition-section",
-      start: "center center",
-      end: "bottom top",
+      start: "top bottom",     // Comienza cuando empieza a entrar
+      end: "bottom top",       // Termina cuando ya no se ve
       scrub: true
     },
-    opacity: 1,
+    opacity: 0.1,
     ease: "none"
   });
 });
