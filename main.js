@@ -53,17 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  let slides = gsap.utils.toArray(".gallery-slide");
+  let frames = gsap.utils.toArray(".scroll-frame");
 
-  gsap.to(slides, {
-    yPercent: -100 * (slides.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".gallery-section",
-      start: "top top",
-      end: `+=${slides.length * 100}%`,
-      scrub: true,
-      pin: true
-    }
+  frames.forEach((frame, i) => {
+    gsap.to(frame, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".scroll-gallery-section",
+        start: () => `${window.innerHeight * i}px top`,
+        end: () => `${window.innerHeight * (i + 1)}px top`,
+        scrub: true
+      }
+    });
   });
 });
