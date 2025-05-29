@@ -47,4 +47,53 @@ document.addEventListener("DOMContentLoaded", () => {
     clipPath: "inset(0 0% 0 0)",
     ease: "none"
   });
+
+  // Título
+  gsap.fromTo(".main-title",
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".main-title",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    }
+  );
+
+  // Columna izquierda
+  gsap.fromTo(".left-info",
+    { opacity: 0, x: -60 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 1.2,
+      delay: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".left-info",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    }
+  );
+
+  // Columna derecha
+  gsap.fromTo(".right-info",
+    { opacity: 0, x: 60 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 1.2,
+      delay: 0.4,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".right-info",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    }
 });
