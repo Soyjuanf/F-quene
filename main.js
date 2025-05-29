@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Imagen: zoom del 0.6 al 1, y quitar borde redondo
   gsap.to(".capsule-image", {
     scale: 1,
-    borderRadius: "0px",
     scrollTrigger: {
       trigger: ".capsule-transition-section",
       start: "top top",
@@ -36,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "75% center",
         end: "bottom top",
         scrub: true
-      }
+      } 
+      ease: "power2.out"
     }
   );
 });
