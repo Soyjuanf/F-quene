@@ -309,19 +309,18 @@ body {
   max-width: 400px;
 }
 
+
 .pin-section {
   position: relative;
   width: 100vw;
-  height: 300vh;
+  height: 600vh; /* Aumenta duración del scroll */
   background: #000;
 }
-
 .wrapper {
   position: relative;
   width: 100vw;
   height: 100%;
 }
-
 .image-container {
   position: fixed;
   top: 0;
@@ -333,7 +332,6 @@ body {
   justify-content: center;
   z-index: 1;
 }
-
 .image {
   position: absolute;
   width: 90vw;
@@ -343,7 +341,6 @@ body {
   opacity: 0;
   transform: scale(1);
 }
-
 .text-block {
   position: fixed;
   top: 20%;
@@ -354,7 +351,6 @@ body {
   z-index: 2;
   opacity: 0;
 }
-
 .marquee {
   position: fixed;
   bottom: 20px;
@@ -365,7 +361,6 @@ body {
   z-index: 0;
   opacity: 0;
 }
-
 .marquee span {
   display: inline-block;
   font-size: 4rem;
@@ -374,7 +369,6 @@ body {
   padding-right: 100%;
   color: white;
 }
-
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
