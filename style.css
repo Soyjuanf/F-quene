@@ -310,24 +310,31 @@ body {
 
 .scroll-gallery-section {
   position: relative;
-  height: 300vh;
+  height: 300vh; /* duración del scroll */
   width: 100%;
   z-index: 10;
+  background: black;
 }
 
 .scroll-gallery-frame {
   position: fixed;
-  top: 100%;
+  top: 100vh; /* inicia fuera de pantalla */
   left: 0;
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  transform: translateY(0%);
-  will-change: transform;
+  pointer-events: none; /* desactiva clics si no hay interactividad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll-gallery-frame img {
-  height: 100%;
-  width: 100%;
+  height: 90vh;
+  width: auto;
+  max-width: 90vw;
   object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
