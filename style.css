@@ -281,6 +281,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
+  border-radius: 50px;
   padding: 0.08rem;
 }
 .image {
