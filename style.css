@@ -317,12 +317,14 @@ body {
 }
 .desert-section {
   padding: 5vh 8vw;
-  background: linear-gradient(to bottom, #0a0a0a, #1b1a1a);
+  background-color: #0a0a0a;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  z-index: 0;
 }
 
 .main-title {
@@ -374,18 +376,24 @@ body {
   font-size: 1.2rem;
 }
 
-/* TRANSICIÓN DE FONDO */
 .transition-section {
-  height: 100vh;
   position: relative;
-  background-color: #0a0a0a;
-}
-.white-overlay {
-  position: absolute;
-  inset: 0;
-  background: #fff;
-  clip-path: inset(100% 0 0 0); /* Oculta al inicio */
+  height: 100vh;
+  background-color: transparent; /* debe ser transparente para que el blanco suba */
   z-index: 1;
+  pointer-events: none;
+}
+
+.white-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  clip-path: inset(100% 0 0 0);
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* GALERÍA BLANCA */
