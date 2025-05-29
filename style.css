@@ -452,3 +452,39 @@ body {
 .gallery-item:hover .overlay p {
   opacity: 1;
 }
+.desert-section-light {
+  padding: 5vh 8vw;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.desert-section-light .main-title {
+  font-size: 10vw;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 5vh;
+  color: #111;
+}
+
+.desert-section-light .label {
+  color: #000;
+}
+
+.desert-section-light .difficulty-list {
+  border-top: 1px solid #ccc;
+}
+
+.desert-section-light .difficulty-list li {
+  border-bottom: 1px solid #ccc;
+  color: #333;
+}
+
+.desert-section-light .right-info {
+  color: #333;
+}
