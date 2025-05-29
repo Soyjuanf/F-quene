@@ -131,17 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Desvanecer el degradado cuando llega la galería
-  gsap.to(".black-to-white-transition", {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".gallery-section",
-      start: "top 90%",
-      end: "top 70%",
-      scrub: true
-    }
-   }
- );
 // Animación de entrada de los items
   gsap.utils.toArray(".gallery-item").forEach((item) => {
     gsap.from(item, {
@@ -153,8 +142,45 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: item,
         start: "top 85%",
         toggleActions: "play none none none"
-      }
-    });
+// Mostrar el degradado al empezar scroll
+  ScrollTrigger.create({
+    trigger: ".transition-section",
+    start: "top bottom",
+    end: "top top",
+    onEnter: () => {
+      const fade = document.querySelector(".black-to-white-transition");
+      fade.style.display = "block";
+      gsap.to(fade, { opacity: 1, duration: 0.5, ease: "power2.out" });
+    },
+    onLeave: () => {
+      const fade = document.querySelector(".black-to-white-transition");
+      gsap.to(fade, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+          fade.style.display = "none";
+        }
+      });
+    },
+    scrub: true
+  });
+
+  // También desactiva si usuario hace scroll rápido hasta la galería
+  ScrollTrigger.create({
+    trigger: ".gallery-section",
+    start: "top 90%",
+    onEnter: () => {
+      const fade = document.querySelector(".black-to-white-transition");
+      gsap.to(fade, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+          fade.style.display = "none";
+        }
+      });
+    }
   });
 });
 
