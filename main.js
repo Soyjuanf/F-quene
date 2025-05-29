@@ -48,37 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Sección Split-Gallery (nuevo comportamiento estilo Capsules)
-  const galleryImages = [ "#image-1", "#image-2", "#image-3" ];
-  const galleryTexts  = [ "#text-1", "#text-2", "#text-3" ];
-
-  galleryImages.forEach((img, i) => {
-    gsap.set(img, { opacity: 0 });
-    gsap.to(img, {
-      scrollTrigger: {
-        trigger: ".scroll-split-gallery",
-        start: `${i * 100}% top`,
-        end: `${(i + 1) * 100}% top`,
-        scrub: true
-      },
-      opacity: 1,
-      duration: 1,
-      ease: "power1.inOut"
-    });
+  // Text Blocks Animations
+["#text-1", "#text-2", "#text-3"].forEach((selector, i) => {
+  gsap.to(selector, {
+    scrollTrigger: {
+      trigger: selector,
+      start: "top 80%",
+      end: "bottom 60%",
+      toggleClass: "active",
+      scrub: true,
+    }
   });
+});
 
-  galleryTexts.forEach((txt, i) => {
-    gsap.set(txt, { opacity: 0 });
-    gsap.to(txt, {
-      scrollTrigger: {
-        trigger: ".scroll-split-gallery",
-        start: `${i * 100}% top`,
-        end: `${(i + 1) * 100}% top`,
-        scrub: true
-      },
-      opacity: 1,
-      duration: 1,
-      ease: "power1.inOut"
-    });
+// Image fade transitions
+["#image-1", "#image-2", "#image-3"].forEach((img, i) => {
+  gsap.to(img, {
+    scrollTrigger: {
+      trigger: img,
+      start: "top 90%",
+      end: "top 50%",
+      scrub: true,
+    },
+    opacity: 1,
+    duration: 1
   });
 });
