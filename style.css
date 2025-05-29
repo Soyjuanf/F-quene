@@ -317,14 +317,14 @@ body {
 }
 .desert-section {
   padding: 5vh 8vw;
-  background-color: #0a0a0a;
+  background-color: #000;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
 .main-title {
@@ -379,21 +379,22 @@ body {
 .transition-section {
   position: relative;
   height: 100vh;
-  background-color: transparent; /* debe ser transparente para que el blanco suba */
+  background-color: black; /* debe ser transparente para que el blanco suba */
   z-index: 1;
   pointer-events: none;
 }
 
-.white-overlay {
+.white-transition-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: white;
-  clip-path: inset(100% 0 0 0);
+  clip-path: inset(100% 0 0 0); /* Oculto al principio */
   z-index: 10;
   pointer-events: none;
+  transition: clip-path 0.5s ease-out;
 }
 
 /* GALERÍA BLANCA */
