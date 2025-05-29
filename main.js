@@ -61,36 +61,70 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Animar textos
-  gsap.utils.toArray(".gallery-title").forEach((el) => {
-    gsap.fromTo(el,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 70%",
-          end: "top 30%",
-          scrub: true
-        }
-      }
-    );
-  });
+  gsap.set(".gallery-image", {opacity: 0});
+  gsap.set(".text-block", {opacity: 0});
 
-  // Animar imágenes
-  gsap.utils.toArray(".gallery-image").forEach((img) => {
-    gsap.fromTo(img,
-      { opacity: 0, y: 100, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: img,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: true
+  gsap.to("#image-1", {
+   scrollTrigger: {
+     trigger: ".scroll-split-gallery",
+     start: "top top",
+     end: "+=100%",
+     scrub: true
+   },
+   opacity: 1,
+   transform: "scale(1)"
+ });
+
+gsap.to("#text-1", {
+  scrollTrigger: {
+    trigger: ".scroll-split-gallery",
+    start: "top top",
+    end: "+=100%",
+    scrub: true
+  },
+  opacity: 1
+});
+
+gsap.to("#image-2", {
+  scrollTrigger: {
+    trigger: ".scroll-split-gallery",
+    start: "+=100%",
+    end: "+=100%",
+    scrub: true
+  },
+  opacity: 1,
+  transform: "scale(1)"
+});
+
+gsap.to("#text-2", {
+  scrollTrigger: {
+    trigger: ".scroll-split-gallery",
+    start: "+=100%",
+    end: "+=100%",
+    scrub: true
+  },
+  opacity: 1
+});
+
+gsap.to("#image-3", {
+  scrollTrigger: {
+    trigger: ".scroll-split-gallery",
+    start: "+=200%",
+    end: "+=100%",
+    scrub: true
+  },
+  opacity: 1,
+  transform: "scale(1)"
+});
+
+gsap.to("#text-3", {
+  scrollTrigger: {
+    trigger: ".scroll-split-gallery",
+    start: "+=200%",
+    end: "+=100%",
+    scrub: true
+  },
+  opacity: 1
         }
       }
     );
