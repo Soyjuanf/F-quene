@@ -236,87 +236,6 @@ body {
   transform: scale(1.07);
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #2d2621;
-  color: white;
-  overflow-x: hidden;
-}
-
-.capsule-transition-section {
-  height: 200vh;
-  position: relative;
-  background-color: #2d2621;
-}
-
-.capsule-background-text {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  font-size: 18rem;
-  font-weight: 700;
-  white-space: nowrap;
-  color: #f0ede7;
-  animation: marquee 40s linear infinite;
-  transform: translateY(-50%);
-  transition: opacity 0.4s ease;
-  z-index: 1;
-  opacity: 0; /* Empieza oculto */
-  pointer-events: none;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0%) translateY(-50%); }
-  100% { transform: translateX(-50%) translateY(-50%); }
-}
-
-.capsule-zoom-container {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  opacity: 1
-}
-
-.capsule-image {
-  width: 60%;
-  border-radius: 100px;
-  transition: border-radius 0.5s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-  z-index: 0;
-}
-
-}
-
-.capsule-overlay {
-  position: absolute;
-  text-align: left;
-  top: 85%;
-  left: 12%;
-  transform: translateY(-50%);
-  opacity: 0;
-  z-index: 3;
-}
-
-.capsule-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.capsule-desc {
-  font-size: 1rem;
-  max-width: 400px;
-}
-
 .scroll-gallery-section {
   position: relative;
   height: 300vh; /* duración del scroll */
@@ -347,4 +266,45 @@ body {
   border-radius: 40px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+}
+
+.capsule-background-text {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  font-size: 18rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #f0ede7;
+  animation: marquee 40s linear infinite;
+  transform: translateY(-50%);
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  opacity: 0; /* Empieza oculto */
+  pointer-events: none;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%) translateY(-50%); }
+  100% { transform: translateX(-50%) translateY(-50%); }
+}
+
+  .capsule-overlay {
+  position: absolute;
+  text-align: left;
+  top: 85%;
+  left: 12%;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 3;
+}
+
+.capsule-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.capsule-desc {
+  font-size: 1rem;
+  max-width: 400px;
 }
