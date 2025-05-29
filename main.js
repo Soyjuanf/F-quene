@@ -120,15 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   );
-// Activar degradado de transición
+// Mostrar el degradado en el scroll inicial
   gsap.to(".black-to-white-transition", {
     opacity: 1,
     scrollTrigger: {
-      trigger: ".transition-section", // o puedes usar ".gallery-section"
-      start: "top 90%",
+      trigger: ".transition-section",
+      start: "top bottom",
       end: "top top",
       scrub: true
-     }
+    }
+  });
+
+  // Desvanecer el degradado cuando llega la galería
+  gsap.to(".black-to-white-transition", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".gallery-section",
+      start: "top 90%",
+      end: "top 70%",
+      scrub: true
+    }
    }
  );
 // Animación de entrada de los items
