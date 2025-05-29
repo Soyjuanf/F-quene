@@ -47,30 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
     clipPath: "inset(0 0% 0 0)",
     ease: "none"
   });
-
-  // Text Blocks Animations
-["#text-1", "#text-2", "#text-3"].forEach((selector, i) => {
-  gsap.to(selector, {
-    scrollTrigger: {
-      trigger: selector,
-      start: "top 80%",
-      end: "bottom 60%",
-      toggleClass: "active",
-      scrub: true,
-    }
-  });
-});
-
-// Image fade transitions
-["#image-1", "#image-2", "#image-3"].forEach((img, i) => {
-  gsap.to(img, {
-    scrollTrigger: {
-      trigger: img,
-      start: "top 90%",
-      end: "top 50%",
-      scrub: true,
-    },
-    opacity: 1,
-    duration: 1
-  });
 });
