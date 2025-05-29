@@ -452,3 +452,93 @@ body {
 .gallery-item:hover .overlay p {
   opacity: 1;
 }
+.desert-activities-inverted {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff; /* FONDO BLANCO */
+  color: #000;            /* TEXTO NEGRO */
+  padding: 60px 80px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.desert-activities-inverted .left,
+.desert-activities-inverted .right {
+  flex: 1 1 45%;
+}
+
+.desert-activities-inverted h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.desert-activities-inverted .note {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.desert-activities-inverted .levels {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.desert-activities-inverted .levels li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.desert-activities-inverted .right p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+.desert-activities-inverted {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff; /* FONDO BLANCO */
+  color: #000;            /* TEXTO NEGRO */
+  padding: 60px 80px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.desert-activities-inverted .left,
+.desert-activities-inverted .right {
+  flex: 1 1 45%;
+}
+
+.desert-activities-inverted h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.desert-activities-inverted .note {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.desert-activities-inverted .levels {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.desert-activities-inverted .levels li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.desert-activities-inverted .right p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
