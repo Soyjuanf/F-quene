@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // OCULTAR FÚQUENE al llegar a galería
+ // Desvanecer el texto de fondo
   ScrollTrigger.create({
     trigger: ".scroll-gallery-section",
     start: "top 80%",
@@ -61,25 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
     onEnter: () => {
       gsap.to(".capsule-background-text", {
         opacity: 0,
-        duration: 0.3,
-        ease: "power1.out"
+        duration: 0.3
       });
     },
     onLeaveBack: () => {
       gsap.to(".capsule-background-text", {
         opacity: 1,
-        duration: 0.3,
-        ease: "power1.out"
+        duration: 0.3
       });
     }
   });
 
-  // Animaciones de entrada desde abajo de cada imagen
+  // Hacer que las imágenes suban una sobre otra
   const frames = gsap.utils.toArray(".scroll-gallery-frame");
 
   frames.forEach((frame, i) => {
     gsap.to(frame, {
-      top: "0%",
+      top: "0vh",
       scrollTrigger: {
         trigger: ".scroll-gallery-section",
         start: () => `top+=${i * window.innerHeight} top`,
