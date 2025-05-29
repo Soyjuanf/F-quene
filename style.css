@@ -508,11 +508,11 @@ body {
   font-size: 10vw;
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
   color: #f3efe6;
 }
 .map-section {
-  padding: 1vh 2vw;
+  padding: 4vh 8vw;
   background-color: #0a0a0a; /* o #fff si quieres fondo blanco */
 }
 
