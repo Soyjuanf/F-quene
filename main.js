@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
 
-  const durations = [150, 150, 100]; // VH que dura cada imagen
+  const durations = [200, 200, 100]; // VH de duración para cada imagen
 
   images.forEach((img, i) => {
     const start = durations.slice(0, i).reduce((a, b) => a + b, 0);
@@ -15,13 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: ".pin-section",
         start: `${start}vh top`,
         end: `${end}vh top`,
-        scrub: true,
+        scrub: true
       }
     });
 
-    tl.to(img, { opacity: 1, scale: 1.1, duration: 1 });
+    // Para la primera imagen: entra pequeña y crece con scroll
+    if (i === 0) {
+      gsap.set(img, { scale: 0.6 });
+      tl.to(img, { opacity: 1, scale: 1.1, duration: 1 });
+    } else {
+      tl.to(img, { opacity: 1, scale: 1.1, duration: 1 });
+    }
+
     tl.to(texts[i], { opacity: 1 }, "<+0.3");
-    tl.to(texts[i], { opacity: 0 }, ">+0.6");
+    tl.to(texts[i], { opacity: 0 }, ">+1.0"); // más tiempo para leer
   });
 
   gsap.set([".image-2", ".image-3"], { zIndex: (i) => i + 2 });
