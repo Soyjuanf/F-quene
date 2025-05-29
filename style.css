@@ -315,6 +315,7 @@ body {
   margin-top: 0.5rem;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
+
 .scroll-gallery {
   width: 100%;
 }
@@ -345,4 +346,3 @@ body {
   transform: scale(0.95);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
-
