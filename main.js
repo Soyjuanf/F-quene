@@ -13,30 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-// Imagen: zoom del 0.6 al 1, y quitar borde redondo
+  // Zoom
   gsap.to(".capsule-image", {
-    scale: 1,
     scrollTrigger: {
       trigger: ".capsule-transition-section",
       start: "top top",
       end: "bottom top",
       scrub: true
-    }
+    },
+    scale: 1.8,
+    ease: "none"
   });
-
-  // Overlay: aparece con scroll (cuando imagen ya está haciendo zoom)
-  gsap.fromTo(".capsule-overlay",
-    { opacity: 0, y: 40 },
-    {
-      opacity: 1,
-      y: 0,
-      scrollTrigger: {
-        trigger: ".capsule-transition-section",
-        start: "75% center",
-        end: "bottom top",
-        scrub: true
-      } 
-      ease: "power2.out"
-    }
-  );
+  
+ // Capsule
+  gsap.to(".capsule-overlay", {
+    scrollTrigger: {
+      trigger: ".capsule-transition-section",
+      start: "center center",
+      end: "bottom top",
+      scrub: true
+    },
+    opacity: 1,
+    ease: "none"
+  });
 });
