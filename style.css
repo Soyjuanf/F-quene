@@ -256,7 +256,7 @@ body {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  opacity: 0.08;
+  opacity: 1;
   pointer-events: none;
 }
 .marquee-bg span {
