@@ -3,13 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
-  const durations = [800, 800, 550]; // Duración del scroll por imagen
+  const durations = [800, 800, 550]; // Duración por sección (en vh)
 
   images.forEach((img, i) => {
     const start = durations.slice(0, i).reduce((a, b) => a + b, 0);
     const end = start + durations[i];
 
-    // Crear una sola línea de tiempo para sincronizar imagen + texto
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pin-section",
@@ -19,24 +18,48 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Imagen 1 arranca pequeña
+    // Ajustes específicos para la primera imagen
     if (i === 0) {
-      gsap.set(img, { scale: 0.6 });
-      tl.to(img, { opacity: 1, scale: 1.3, duration: 3, ease: "power2.out" });
+      gsap.set(img, { scale: 0.6, opacity: 0 });
+      tl.to(img, {
+        opacity: 1,
+        scale: 1.3,
+        duration: 3,
+        ease: "power2.out"
+      });
     } else {
-      tl.to(img, { opacity: 1, scale: 1.1, duration: 3, ease: "power2.out" });
+      gsap.set(img, { scale: 1, opacity: 0 });
+      tl.to(img, {
+        opacity: 1,
+        scale: 1.1,
+        duration: 3,
+        ease: "power2.out"
+      });
     }
 
-    // Texto aparece y desaparece dentro del mismo timeline que su imagen
-    tl.to(texts[i], { opacity: 1, duration: 5 }, "<+0.2");
-    tl.to(texts[i], { opacity: 0, duration: 5 }, `>-${0.5}`);
+    // Aparece texto
+    gsap.set(texts[i], { opacity: 0 });
+    tl.to(texts[i], {
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out"
+    }, "<+0.2");
+
+    // Desaparece texto
+    tl.to(texts[i], {
+      opacity: 0,
+      duration: 3,
+      ease: "power2.inOut"
+    }, ">-0.5");
   });
 
-  // Z-index correcto
-  gsap.set([".image-2", ".image-3"], { zIndex: (i) => i + 2 });
-  gsap.set(".image-1", { zIndex: 1 });
+  // Z-index para que las imágenes se superpongan correctamente
+  gsap.set(images, {
+    zIndex: (i) => i + 1,
+    position: "absolute"
+  });
 
-  // Marquesina final
+  // Marquesina scroll-fill
   gsap.to(".scroll-fill-text", {
     scrollTrigger: {
       trigger: ".scroll-fill-section",
@@ -48,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  // Título
+  // Animación título principal
   gsap.fromTo(".main-title",
     { opacity: 0, y: 50 },
     {
@@ -64,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  // Columna izquierda
+  // Animación columna izquierda
   gsap.fromTo(".left-info",
     { opacity: 0, x: -60 },
     {
@@ -81,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  // Columna derecha
+  // Animación columna derecha
   gsap.fromTo(".right-info",
     { opacity: 0, x: 60 },
     {
@@ -95,5 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 85%",
         toggleActions: "play none none none"
       }
- });    
+    }
+  );
 });
+
