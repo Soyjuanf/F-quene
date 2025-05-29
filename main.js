@@ -71,6 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
+  // Marquesina scroll-fill
+  gsap.to(".scroll-fill-text-final", {
+    scrollTrigger: {
+      trigger: ".scroll-fill-section-final",
+      start: "top 80%",
+      end: "top 30%",
+      scrub: true
+    },
+    clipPath: "inset(0 0% 0 0)",
+    ease: "none"
+  });
+
   // Animación título principal
   gsap.fromTo(".main-title",
     { opacity: 0, y: 50 },
