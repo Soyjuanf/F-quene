@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
-  const durations = [300, 300, 200]; // vh por cada imagen
+  const durations = [500, 500, 350]; // vh por cada imagen
 
   images.forEach((img, i) => {
     const start = durations.slice(0, i).reduce((a, b) => a + b, 0);
     const end = start + durations[i];
-    const textStart = start + 40;
-    const textEnd = start + 100;
+    const textStart = start + 10;
+    const textEnd = start + 300;
 
     // Imagen entra y hace zoom
     gsap.timeline({
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Imagen 1 empieza pequeña
     if (i === 0) {
-      gsap.set(img, { scale: 0.6 });
+      gsap.set(img, { scale: 0.3 });
     }
 
     // Texto aparece y desaparece con buena duración
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         scrub: true
       }
     })
-    .to(texts[i], { opacity: 1, duration: 0.5 })
-    .to(texts[i], { opacity: 0, duration: 0.5 });
+    .to(texts[i], { opacity: 1, duration: 0.9 })
+    .to(texts[i], { opacity: 0, duration: 0.9 });
   });
 
   // Ajustar z-index para superposición correcta
