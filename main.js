@@ -52,4 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 2,
     ease: "none"
   });
+
+  let slides = gsap.utils.toArray(".gallery-slide");
+
+  gsap.to(slides, {
+    yPercent: -100 * (slides.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".gallery-section",
+      start: "top top",
+      end: `+=${slides.length * 100}%`,
+      scrub: true,
+      pin: true,
+    }
+  });
 });
