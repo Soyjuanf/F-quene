@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = [".image-1", ".image-2", ".image-3"];
   const texts = [".text-1", ".text-2", ".text-3"];
-  const durations = [300, 300, 100]; // Duración del scroll por imagen
+  const durations = [800, 800, 550]; // Duración del scroll por imagen
 
   images.forEach((img, i) => {
     const start = durations.slice(0, i).reduce((a, b) => a + b, 0);
