@@ -518,8 +518,8 @@ body {
 }
 .map-title {
   font-size: 8vw;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
-  margin-bottom: 5vh;
+  margin-bottom: 20vh;
   color: #f3efe6;
 }
