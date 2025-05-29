@@ -240,7 +240,7 @@ body {
   height: 400vh;
   position: relative;
   background: black;
-  border-radius: 250px;
+  border-radius: 130px;
 }
 .pinned-wrapper {
   position: sticky;
@@ -248,7 +248,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  border-radius: 250px;
+  border-radius: 130px;
 }
 .marquee-bg {
   position: absolute;
@@ -283,7 +283,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  border-radius: 250px;
+  border-radius: 130px;
   padding: 0.08rem;
 }
 .image {
@@ -291,7 +291,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 250px;
+  border-radius: 130px;
   opacity: 0;
   transform: scale(1);
 }
