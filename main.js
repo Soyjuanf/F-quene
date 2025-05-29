@@ -59,4 +59,40 @@ document.addEventListener("DOMContentLoaded", () => {
     clipPath: "inset(0 0% 0 0)",
     ease: "none"
   });
+
+  // Animar textos
+  gsap.utils.toArray(".gallery-title").forEach((el) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 70%",
+          end: "top 30%",
+          scrub: true
+        }
+      }
+    );
+  });
+
+  // Animar imágenes
+  gsap.utils.toArray(".gallery-image").forEach((img) => {
+    gsap.fromTo(img,
+      { opacity: 0, y: 100, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: img,
+          start: "top 80%",
+          end: "top 40%",
+          scrub: true
+        }
+      }
+    );
+  });
 });
