@@ -535,7 +535,7 @@ body {
   border: 0;
 }
 .vr-title {
-  padding: 2vh 8vw;
+  padding: 0.08vh 2vw;
   background-color: #ffffff;
   min-height: 20vh;
   display: flex;
@@ -553,9 +553,9 @@ body {
   color: #0a0a0a;
 }
 .final {
-  padding: 2vh 8vw;
+  padding: 4vh 2vw;
   background-color: #ffffff;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
