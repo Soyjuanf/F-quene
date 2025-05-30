@@ -551,3 +551,15 @@ body {
   line-height: 1.1;
   margin-bottom: 0.008vh;
   color: #0a0a0a;
+}
+.final {
+  padding: 2vh 8vw;
+  background-color: #ffffff;
+  min-height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
