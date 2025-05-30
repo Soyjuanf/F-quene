@@ -377,7 +377,7 @@ body {
 }
 
 .gradient-transition {
-  height: 50vh;
+  height: 30vh;
   background: linear-gradient(to bottom, #0a0a0a 0%, #ffffff 100%);
 }
 
@@ -535,7 +535,7 @@ body {
   border: 0;
 }
 .vr-title {
-  padding: 0.02vh 4vw;
+  padding: 0.02vh 3vw;
   background-color: #ffffff;
   min-height: 10vh;
   display: flex;
@@ -553,7 +553,7 @@ body {
   color: #0a0a0a;
 }
 .final {
-  padding: 8vh 2vw;
+  padding: 20vh 2vw;
   background-color: #ffffff;
   min-height: 10vh;
   display: flex;
