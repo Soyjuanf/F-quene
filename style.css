@@ -512,7 +512,7 @@ body {
   color: #f3efe6;
 }
 .map-section {
-  padding: 5vh 8vw;
+  padding: 5vh 6vw;
   background-color: #0a0a0a; /* o #fff si quieres fondo blanco */
 }
 
@@ -535,9 +535,9 @@ body {
   border: 0;
 }
 .vr-title {
-  padding: 0.08vh 2vw;
+  padding: 2vh 0.08vw;
   background-color: #ffffff;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
