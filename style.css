@@ -239,7 +239,7 @@ body {
 .pin-section {
   height: 400vh;
   position: relative;
-  background: black;
+  background: #0a0a0a;
   border-radius: 100px;
 }
 .pinned-wrapper {
